@@ -6,7 +6,7 @@ require('dotenv').config()
 
 // Load env vars
 const url = process.env.URL || '0.0.0.0';
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 
 // Init express
 let app = express();
