@@ -1,0 +1,33 @@
+{
+  "name": "learn-blockchain-nodejs",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "description": "Implementation of a blockchain",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Ucup surucup",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.16.3",
+    "js-sha256": "^0.9.0",
+    "node-fetch": "^2.2.0",
+    "node-persist": "^3.0.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanangNSL/learn-blockchain-nodejs.git"
+  },
+  "keywords": [
+    "Belajar",
+    "blockchain"
+  ],
+  "bugs": {
+    "url": "https://github.com/nanangNSL/learn-blockchain-nodejs/issues"
+  },
+  "homepage": "https://github.com/nanangNSL/learn-blockchain-nodejs#readme"
+}
