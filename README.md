@@ -32,6 +32,141 @@ Implementasi sederhana dari blockchain menggunakan Node.js.
    ```
 
 2. Buka browser dan akses `http://localhost:7000` untuk mengakses aplikasi blockchain.
+3. Ini adalah list node defaultnya kamu bebas ganti dengan port berapapun tapi jangan sama
+  ```bash
+  [
+    "http://0.0.0.0:7000",
+    "http://0.0.0.0:7001",
+    "http://0.0.0.0:7002"
+   ]
+   ```
+4. Melihat list nodes
+   ```bash
+   GET http://0.0.0.0:7000/nodes
+   ```
+   Hasilnya
+   ```bash
+   [
+    "http://0.0.0.0:7001",
+    "http://0.0.0.0:7002"
+   ]
+   ```
+5. Posting transaksi blockchain
+   ```bash
+   POST http://0.0.0.0:4000/transaction
+   ```
+   Dengan data yang dikirimkan
+   ```bash
+   '{"from":"bd748a5a5479649cfd83132d3be99d0c1a2ebadc1e4c405e","to":"3be24b8dccf3c0a171c76b092e2a95f6e9d387eac6b647f1","amount": 1}'
+   ```
+   Content-Type: application/json dan jika berjalan baik maka
+   ```bash
+   {
+      "success": 1
+   }
+     ```
+6. Cara mengambil semua transaksi blockchain
+   ```bash
+   GET http://0.0.0.0:7000/transactions
+   ```
+   Hasilnya 
+   ```bash
+   [
+    {
+        "from": "bd748a5a5479649cfd83132d3be99d0c1a2ebadc1e4c405e",
+        "to": "3be24b8dccf3c0a171c76b092e2a95f6e9d387eac6b647f1",
+        "amount": 1,
+        "timestamp": 1685433416
+    }
+   ]
+   ```
+7. Cara mengambil block yang di tambang
+   ```bash
+   GET http://0.0.0.0:7000/mine
+   ```
+   Hasilnya : 
+   ```bash
+   {
+      "index": 1,
+      "previousHash": "00002818703517bab21046d807a3fc0284b8a05979ce48baa40ed2eeeadd3b92",
+      "hash": "000eb8c42f469eeb319c279e75cb8e3b6e59f63c5d712ea50aa66d242cc9b29f",
+      "timestamp": 1685433712,
+      "nonce": 1759,
+      "transactions": [
+         {
+               "from": "bd748a5a5479649cfd83132d3be99d0c1a2ebadc1e4c405e",
+               "to": "3be24b8dccf3c0a171c76b092e2a95f6e9d387eac6b647f1",
+               "amount": 1,
+               "timestamp": 1685433416
+         }
+      ]
+   }
+   ```
+8. Cara mendapatkan Rantai data blockchain
+   ```bash
+   GET http://0.0.0.0:7000/blockchain
+   ```
+   Hasilnya :
+   ```bash
+   [
+      {
+         "index": 0,
+         "previousHash": "0000000000000000",
+         "hash": "00002818703517bab21046d807a3fc0284b8a05979ce48baa40ed2eeeadd3b92",
+         "timestamp": 1685432641,
+         "nonce": 4190,
+         "transactions": []
+      },
+      {
+         "index": 1,
+         "previousHash": "00002818703517bab21046d807a3fc0284b8a05979ce48baa40ed2eeeadd3b92",
+         "hash": "000eb8c42f469eeb319c279e75cb8e3b6e59f63c5d712ea50aa66d242cc9b29f",
+         "timestamp": 1685433712,
+         "nonce": 1759,
+         "transactions": [
+               {
+                  "from": "bd748a5a5479649cfd83132d3be99d0c1a2ebadc1e4c405e",
+                  "to": "3be24b8dccf3c0a171c76b092e2a95f6e9d387eac6b647f1",
+                  "amount": 1,
+                  "timestamp": 1685433416
+               }
+         ]
+      }
+      ]
+      ```
+9. Mengambil block berdasarkan index
+   ```bash
+   GET http://0.0.0.0:7000/blockchain/1
+   ```
+   Hasilnya :
+   ```bash
+   {
+    "index": 1,
+    "previousHash": "00002818703517bab21046d807a3fc0284b8a05979ce48baa40ed2eeeadd3b92",
+    "hash": "000eb8c42f469eeb319c279e75cb8e3b6e59f63c5d712ea50aa66d242cc9b29f",
+    "timestamp": 1685433712,
+    "nonce": 1759,
+    "transactions": [
+        {
+            "from": "bd748a5a5479649cfd83132d3be99d0c1a2ebadc1e4c405e",
+            "to": "3be24b8dccf3c0a171c76b092e2a95f6e9d387eac6b647f1",
+            "amount": 1,
+            "timestamp": 1685433416
+        }
+    ]
+   }
+   ```
+10. Mengambil index terakhir berdasarkan block terakhir
+   ```bash
+   GET http://0.0.0.0:7000/blockchain/last-index
+   ```
+   Hasilnya :
+   ```bash
+   1
+   ```
+  
+
+
 
 ## Kontribusi
 
