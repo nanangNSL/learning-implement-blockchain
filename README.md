@@ -30,6 +30,10 @@ Implementasi sederhana dari blockchain menggunakan Node.js.
    ```bash
    npm start
    ```
+   atau jika ingin banyak instance bisa
+   ```bash
+   node multiple
+   ```
 
 2. Buka browser dan akses `http://localhost:7000` untuk mengakses aplikasi blockchain.
 3. Ini adalah list node defaultnya kamu bebas ganti dengan port berapapun tapi jangan sama
