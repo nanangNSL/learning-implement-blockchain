@@ -31,7 +31,7 @@ Implementasi sederhana dari blockchain menggunakan Node.js.
    npm start
    ```
 
-2. Buka browser dan akses `http://localhost:8080` untuk mengakses aplikasi blockchain.
+2. Buka browser dan akses `http://localhost:7000` untuk mengakses aplikasi blockchain.
 
 ## Kontribusi
 
